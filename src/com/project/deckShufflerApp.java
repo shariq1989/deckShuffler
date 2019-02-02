@@ -4,8 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Main {
+/**
+ * This class prints to console a shuffled 52 card deck
+ */
+public class deckShufflerApp {
     public static void main(String[] args) {
+        shuffleDeck();
+    }
+
+    /**
+     * Prints an array of strings representing a shuffled 52 deck of cards.
+     */
+    private static void shuffleDeck() {
         String[] cardRanks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
         String[] cardSuits = {"Clubs", "Diamonds", "Hearts", "Spades"};
         List<String> cardsToBeProcessed = new ArrayList<>();
@@ -30,7 +40,12 @@ public class Main {
         System.out.println(shuffledDeck);
     }
 
-    //This method takes in an upper limit and returns a random number less than the upper limit
+    /**
+     * This method takes in an int as the upper limit and returns a random number between 0 and the upper limit
+     *
+     * @param max The random generated must be less than this number
+     * @return An integer between 0 and max
+     */
     private static int randomize(int max) {
         Random rand = new Random();
         return (rand.nextInt(max));
